@@ -14,10 +14,6 @@ public_users.post('/register', (req, res) => {
         });
     }
 
-    const isValid = (username) => {
-        return users.some((user) => user.username === username);
-    };
-
     if (isValid(username)) {
         return res.status(409).json({
             message: "Username already exists"
